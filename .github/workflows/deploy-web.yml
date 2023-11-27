@@ -15,7 +15,8 @@ jobs:
       - run: dart pub get
       - run: dart pub global activate webdev
       - run: |
-          dart webdev build
+          export PATH="$PATH":"~/.pub-cache/bin"
+          webdev build
           cd build
           git init
           git config --global user.email duanweiwei1982@gmail.com
