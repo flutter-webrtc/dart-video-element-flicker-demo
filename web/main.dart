@@ -6,7 +6,8 @@ void main() async {
   html.document.querySelector('#addVideo')?.onClick.listen((event) async {
     print('add video');
     if (_localStream == null) {
-      _localStream = await html.window.navigator.getUserMedia(video: true);
+      _localStream = await html.window.navigator.mediaDevices
+          ?.getUserMedia({'video': true});
     }
     var local = html.document.querySelector('#local_videos');
     var localVideo = html.VideoElement();
